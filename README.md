@@ -11,6 +11,3 @@
 
 > 每个项目目录下都有 `README.md`（任务说明与运行方式），图神经网络项目另有汇总实验报告
 > `graph_beginner-main/REPORT.md`。
->
-> 出于仓库体积与 GitHub 单文件 100 MB 限制，**数据集、模型权重与训练 checkpoint 未纳入版本库**，
-> 可按各项目内的 `prepare_data.py` / 下载脚本与 README 说明重建。
