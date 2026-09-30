@@ -1,0 +1,14 @@
+data/cache/
+data/swebench-lite/
+data/repos/
+data/toy-repo/
+data/*.parquet
+ckpt/
+models/
+src/__pycache__/
+src/skills/**/__pycache__/
+eval/__pycache__/
+eval/result.json
+eval/traces/
+*.pyc
+.venv/

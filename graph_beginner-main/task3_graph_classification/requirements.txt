@@ -1,0 +1,13 @@
+# Task 3 (图分类 / graph classification) -- exact environment used for the
+# numbers reported in README.md.  Verified on Windows with Python 3.13.
+#
+# Install (the PyG extension wheels must match the torch/CUDA build):
+#   pip install --no-cache-dir -r requirements.txt \
+#       -f https://data.pyg.org/whl/torch-2.7.1+cu118.html
+torch==2.7.1
+torch-geometric==2.8.0
+pyg-lib
+torch-scatter
+torch-sparse
+torch-cluster
+numpy>=1.26

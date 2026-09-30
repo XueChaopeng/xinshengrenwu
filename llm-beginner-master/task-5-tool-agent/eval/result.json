@@ -1,0 +1,199 @@
+[
+  {
+    "test": "tools_individual",
+    "pass": true,
+    "results": {
+      "calculator": true,
+      "python_sandbox": true,
+      "file_search": true,
+      "wiki": "skip(网络不可用？): wiki 查询失败：<urlopen error _ssl.c:1015: The handshake operation timed out>"
+    },
+    "network_skipped": [
+      "wiki"
+    ]
+  },
+  {
+    "test": "multi_tool_success_rate",
+    "pass": false,
+    "rate": 0.1,
+    "n": 10,
+    "details": [
+      {
+        "id": 1,
+        "success": false,
+        "final_answer_preview": "计算结果为 468000，其位数大约为 6。",
+        "expected_answer_contains": [
+          "456831",
+          [
+            "6位",
+            "6 位",
+            "六位",
+            "6 digits"
+          ]
+        ],
+        "expected_tools": [
+          "calculator"
+        ],
+        "used_tools": [],
+        "used_expected_tools": null
+      },
+      {
+        "id": 2,
+        "success": true,
+        "final_answer_preview": "1060",
+        "expected_answer_contains": [
+          "1060"
+        ],
+        "expected_tools": [
+          "python_sandbox"
+        ],
+        "used_tools": [
+          "python_sandbox"
+        ],
+        "used_expected_tools": true
+      },
+      {
+        "id": 3,
+        "success": false,
+        "final_answer_preview": "未能找到符合要求的文件，请检查您的输入信息。",
+        "expected_answer_contains": [
+          [
+            "2",
+            "两"
+          ]
+        ],
+        "expected_tools": [
+          "file_search"
+        ],
+        "used_tools": [
+          "file_search"
+        ],
+        "used_expected_tools": true
+      },
+      {
+        "id": 4,
+        "success": false,
+        "final_answer_preview": "(agent 未给出最终答案)",
+        "expected_answer_contains": [
+          [
+            "Turing",
+            "图灵"
+          ]
+        ],
+        "expected_tools": [
+          "wiki"
+        ],
+        "used_tools": [
+          "wiki",
+          "wiki"
+        ],
+        "used_expected_tools": true
+      },
+      {
+        "id": 5,
+        "success": false,
+        "final_answer_preview": "Geoffrey Hinton 到 2026 年时将会 79 岁。",
+        "expected_answer_contains": [
+          "1947",
+          [
+            "78",
+            "79"
+          ]
+        ],
+        "expected_tools": [
+          "wiki",
+          "calculator"
+        ],
+        "used_tools": [
+          "calculator",
+          "calculator"
+        ],
+        "used_expected_tools": false
+      },
+      {
+        "id": 6,
+        "success": false,
+        "final_answer_preview": "'level' 是回文，而 'world' 不是回文。",
+        "expected_answer_contains": [
+          "level",
+          "True",
+          "world",
+          "False"
+        ],
+        "expected_tools": [
+          "python_sandbox"
+        ],
+        "used_tools": [],
+        "used_expected_tools": null
+      },
+      {
+        "id": 7,
+        "success": false,
+        "final_answer_preview": "当前目录下没有文件包含'TODO'。",
+        "expected_answer_contains": [
+          "todo_note.md"
+        ],
+        "expected_tools": [
+          "file_search"
+        ],
+        "used_tools": [
+          "file_search"
+        ],
+        "used_expected_tools": true
+      },
+      {
+        "id": 8,
+        "success": false,
+        "final_answer_preview": "计算结果的小数点后 6 位是 45.017989。",
+        "expected_answer_contains": [
+          [
+            "45.011110",
+            "45.01111"
+          ]
+        ],
+        "expected_tools": [
+          "calculator",
+          "python_sandbox"
+        ],
+        "used_tools": [],
+        "used_expected_tools": null
+      },
+      {
+        "id": 9,
+        "success": false,
+        "final_answer_preview": "Transformer 是一种机器学习模型，在自然语言处理和计算机视觉等领域被广泛应用。它是由谷歌大脑团队于 2017 年",
+        "expected_answer_contains": [
+          "2017",
+          "9"
+        ],
+        "expected_tools": [
+          "wiki",
+          "calculator"
+        ],
+        "used_tools": [],
+        "used_expected_tools": null
+      },
+      {
+        "id": 10,
+        "success": false,
+        "final_answer_preview": "对不起，我无法找到关于 README.md 的信息。请检查文件名是否正确，并确保文件存在于指定目录中。",
+        "expected_answer_contains": [
+          "任务五",
+          "本地文件检索测试文件"
+        ],
+        "expected_tools": [
+          "file_search"
+        ],
+        "used_tools": [
+          "file_search"
+        ],
+        "used_expected_tools": true
+      }
+    ]
+  },
+  {
+    "test": "error_recovery",
+    "pass": null,
+    "skip": "需要学生实现 inject_error 测试钩子；可选实验"
+  }
+]

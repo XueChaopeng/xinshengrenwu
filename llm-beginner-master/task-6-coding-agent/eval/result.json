@@ -1,0 +1,34 @@
+[
+  {
+    "test": "mcp_server_lists_tools",
+    "pass": true,
+    "tools": [
+      "read_file",
+      "write_file",
+      "run_tests",
+      "git_diff",
+      "git_apply"
+    ]
+  },
+  {
+    "test": "skill_loader_metadata",
+    "pass": true,
+    "count": 3,
+    "missing_meta": []
+  },
+  {
+    "test": "toy_repo_patch",
+    "pass": false,
+    "error": "HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。\"))",
+    "trace": [
+      "  File \"C:\\Users\\26378\\miniconda3\\Lib\\site-packages\\requests\\adapters.py\", line 677, in send",
+      "    raise ConnectionError(e, request=request)",
+      "requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。\"))"
+    ]
+  },
+  {
+    "test": "swebench_lite_sample",
+    "pass": null,
+    "skip": "data/swebench-lite-sample.parquet 不存在；需要时跑 data/download.py --with-swebench"
+  }
+]

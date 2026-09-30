@@ -1,0 +1,20 @@
+[
+  {
+    "test": "tokenizer_roundtrip",
+    "pass": true,
+    "failures": []
+  },
+  {
+    "test": "kv_cache_equivalence",
+    "pass": true,
+    "max_abs_diff": 7.62939453125e-06
+  },
+  {
+    "test": "perplexity_on_dev",
+    "pass": true,
+    "perplexity": 26.71,
+    "threshold": 50.0,
+    "n_tokens": 3518,
+    "dataset": "poetry"
+  }
+]

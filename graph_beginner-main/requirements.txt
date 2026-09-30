@@ -1,0 +1,41 @@
+# ============================================================================
+#  图神经网络-Beginner  运行环境文件
+#  实测环境：Windows 11 / Python 3.13.11 / PyTorch 2.7.1+cu118 / PyG 2.8.0
+#  硬件：NVIDIA GPU（CUDA 可用）；纯 CPU 也能跑，只是慢一些
+# ============================================================================
+
+# ---------------------------------------------------------------- 核心框架 ---
+# 本项目选择 PyTorch Geometric（PyG）作为图神经网络框架。
+# 说明：README 允许在 DGL 与 PyG 中二选一。选择 PyG 的原因是 DGL 目前
+#       尚未提供 Python 3.13 的官方 wheel，而 PyG 2.8 + pyg-lib 已完整支持。
+torch>=2.7.1
+torch_geometric>=2.8.0
+
+# ------------------------------------------------- PyG 采样器所需的 C++ 扩展 ---
+# ⚠️ 重要：pyg-lib / torch-sparse 等扩展必须与 torch 和 CUDA 版本严格匹配，
+#    请务必使用 PyG 官方 wheel 源安装，不要直接 `pip install`（会尝试源码编译）：
+#
+#     pip install pyg-lib torch-sparse torch-scatter torch-cluster \
+#         -f https://data.pyg.org/whl/torch-2.7.1+cu118.html
+#
+#     （把 torch-2.7.1+cu118 换成你自己的 torch 版本；CPU 用户用 torch-2.7.1+cpu）
+#
+# 任务一/任务二 的 NeighborLoader / LinkNeighborLoader 需要 pyg-lib 或
+# torch-sparse 二者之一，否则会报
+#     ImportError: 'NeighborSampler' requires either 'pyg-lib' or 'torch-sparse'
+pyg-lib
+torch-sparse
+torch-scatter
+torch-cluster
+
+# ------------------------------------------------------------ 数据处理/评估 ---
+numpy>=1.24
+scipy>=1.10
+scikit-learn>=1.3      # 任务二的 ROC-AUC / Average Precision
+pandas>=2.0
+tqdm>=4.65
+
+# --------------------------------------------------------------- 数据集下载 ---
+# 各数据集由各任务 code/prepare_data.py 自动下载到「本任务目录下的 data/」，
+# 不会写入 C 盘用户目录。国内网络下部分官方源不可达（Google Drive / Dropbox），
+# 脚本内置了可用的镜像回退（详见各任务 README.md「数据集」一节）。
